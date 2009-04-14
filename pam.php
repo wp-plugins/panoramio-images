@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Panoramio Images
-Plugin URI: -
+Plugin URI: http://wordpress.org/extend/plugins/panoramio-images/
 Description: Adds functions to retrieve values and images from panoramio.
 Version: 1.0
 Author: Rambash
-Author URI: -
+Author URI: http://wordpress.org/extend/plugins/panoramio-images/
 
 Copyright 2009  Rambash (email : rambash@gmail.com)
 
@@ -92,7 +92,7 @@ function pam_show($start, $end, $ll, $size){
 							echo '<a href="http://www.panoramio.com/photo'.$ar[$i].'"><img src='.$arr[$i].' style="border:1px solid gray;margin-bottom:5px;margin:1px;"></a>';
 						}		
 		echo '<br />
-		<p style="text-align:right;font-size: 85%;margin-right:1px;">See more photos</p>
+		<!--<p style="text-align:right;font-size: 85%;margin-right:1px;">See more photos</p>-->
 		<p id="panoramio" style="color:#A1A1A1;font-size:85%;margin-top:3px;">Photos provided by <a href="http://www.panoramio.com">Panoramio</a> are under the copyright of their owners.</p></center>
 			</div>';
 		}

@@ -16,6 +16,10 @@ A wordpress plugin for retrieving images and values through the Panoramio API.
 == Installation ==
 Just copy the files to your wordpress plugins directory and activate it through the admin interface.
 
+== Screenshots ==
+
+1. The output from pam_display
+
 == FUNCTIONS ==
 pam_get($start, $end, $ll, $size, $var)
 
@@ -81,21 +85,31 @@ $radius
 
 	* It defines the length in km of the sides of the box created in pam_showfromcenter
 
-I recommend using http://mapki.com/getLonLat.php for coordinates.
 
 == EXAMPLES ==
+
 
 1: Show the five first thumbnails from coordinates given in a posts custom field called "panoramio".
 
         * pam_show(0,5, get_post_meta($post->ID, "panoramio", true), "thumbnail");
 
+
 2: Retrieving a specific variable from the five first thumbnails and placing it into an array.
-       
+
+
         * pam_get(0, 5, 17.872631549835205:59.317929544812046:17.889862060546875:59.322965844339194, "thumbnail", "owner_name")
 
 3: Show six thumbnails in an area of 500x500m around a coordinate
 
+
 	* pam_showfromcenter(0, 6, "17.881622314453125:59.320666756687736", 0.5, "square");
 
 4: Show six thumbnails. If two points are given then it retrieves the images from that rectangle. If only a single point is given then it creates a 500x500m rectangle and checks for images.
+
+
 	* pam_display(0, 6, get_post_meta($post->ID, "panoramio", true), "square", 0.5);
+
+
+== MISC ==
+
+All coordinates should be given in the decimal form of latitude/longitude. I recommend using http://mapki.com/getLonLat.php.
