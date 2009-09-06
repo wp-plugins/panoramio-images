@@ -1,4 +1,4 @@
-=== Panoramio Images ===
+﻿=== Panoramio Images ===
 Contributors: rambash
 Donate link: -
 Tags: panoramio, api, images
@@ -107,7 +107,7 @@ $radius
 4: Show six thumbnails. If two points are given then it retrieves the images from that rectangle. If only a single point is given then it creates a 500x500m rectangle and checks for images.
 
 
-	* pam_display(0, 6, get_post_meta($post->ID, "panoramio", true), "square", 0.5);
+	* pam_display(0, 6, 17.872631549835205:59.317929544812046, "square", 0.5);
 
 
 == MISC ==
