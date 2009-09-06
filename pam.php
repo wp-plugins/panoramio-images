@@ -3,7 +3,7 @@
 Plugin Name: Panoramio Images
 Plugin URI: http://wordpress.org/extend/plugins/panoramio-images/
 Description: Adds functions to retrieve values and images from panoramio.
-Version: 1.0
+Version: 1.1
 Author: Rambash
 Author URI: http://wordpress.org/extend/plugins/panoramio-images/
 
@@ -41,6 +41,13 @@ HOWTO
 Read the readme.txt
 */
 
+add_action('wp_head', 'snoppinit', 0);
+function snoppinit(){
+wp_deregister_script('jquery');
+wp_enqueue_script( 'jquery', bloginfo('wpurl') . '/wp-content/plugins/pam/js/jquery.js', false, '1.2.6');
+wp_enqueue_script( 'pamjax', bloginfo('wpurl') . '/wp-content/plugins/pam/js/pamjax.js', array('jquery'), '1.0');
+
+}
 
 function pam_get($start, $end, $ll, $size, $var){
 
@@ -74,27 +81,30 @@ function pam_show($start, $end, $ll, $size){
 		{
 			echo '
 			<div style="background-color:#ffffcd;padding:6px;border:1px solid #d7d8b9;margin-top:10px;">
-				<center>
-					<b>Area pictures</b><br />';
-					$newstring =strstr ($string, "Boston");
-					$arr = pam_get($start ,$end, $ll, $size, "photo_file_url");
+				
+					<center>
+						<b>Area pictures</b><br />
+						<div id="pamdiv">';
+						$newstring =strstr ($string, "Boston");
+						$arr = pam_get($start ,$end, $ll, $size, "photo_file_url");
 
-					$ar = $arr;
+						$ar = $arr;
+
+							for($i=$start; $i<$end; $i++)
+								{
+									$ar[$i] = rtrim(strrchr($ar[$i], "/"), ".jpg");
+								}	
+						
 
 						for($i=$start; $i<$end; $i++)
 							{
-								$ar[$i] = rtrim(strrchr($ar[$i], "/"), ".jpg");
-							}	
-					
-
-					for($i=$start; $i<$end; $i++)
-						{
-							echo '<a href="http://www.panoramio.com/photo'.$ar[$i].'"><img src='.$arr[$i].' style="border:1px solid gray;margin-bottom:5px;margin:1px;"></a>';
-						}		
-		echo '<br />
-		<!--<p style="text-align:right;font-size: 85%;margin-right:1px;">See more photos</p>-->
-		<p id="panoramio" style="color:#A1A1A1;font-size:85%;margin-top:3px;">Photos provided by <a href="http://www.panoramio.com">Panoramio</a> are under the copyright of their owners.</p></center>
+								echo '<a href="http://www.panoramio.com/photo'.$ar[$i].'"><img src='.$arr[$i].' style="border:1px solid gray;margin-bottom:5px;margin:1px;"></a>';
+							}		
+					echo '</div>
+					<p style="text-align:right;font-size: 85%;margin-right:1px;"><a href="#" id="pamore">See more photos</a></p>
+					<p id="panoramio" style="color:#A1A1A1;font-size:85%;margin-top:3px;">Photos provided by <a href="http://www.panoramio.com">Panoramio</a> are under the copyright of their owners.</p></center>
 			</div>';
+
 		}
 }
 
@@ -123,5 +133,6 @@ function pam_display($start, $end, $coordinate, $size, $radius = 0.5){
 				pam_showfromcenter($start, $end, $coordinate, $radius, $size);
 			}
 }
+
 
 ?>
