@@ -44,8 +44,8 @@ Read the readme.txt
 add_action('wp_head', 'snoppinit', 0);
 function snoppinit(){
 wp_deregister_script('jquery');
-wp_enqueue_script( 'jquery', bloginfo('wpurl') . '/wp-content/plugins/pam/js/jquery.js', false, '1.2.6');
-wp_enqueue_script( 'pamjax', bloginfo('wpurl') . '/wp-content/plugins/pam/js/pamjax.js', array('jquery'), '1.0');
+wp_enqueue_script( 'jquery', WP_PLUGIN_URL . '/pam/js/jquery.js', false, '1.2.6');
+wp_enqueue_script( 'pamjax', WP_PLUGIN_URL . '/pam/js/pamjax.js', array('jquery'), '1.0');
 
 }
 
