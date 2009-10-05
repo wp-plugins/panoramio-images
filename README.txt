@@ -109,6 +109,16 @@ $radius
 
 	* pam_display(0, 6, 17.872631549835205:59.317929544812046, "square", 0.5);
 
+== WIDGET ==
+
+A proper widget is under development. Until then you can put this in your sidbar.
+
+		<?php
+		pam_widget(get_post_meta($post->ID, "panoramio", true));
+		?>
+
+It will show a box with six images on all posts with a custom field called "panoramio". The fields value should be the coordinates to the point where
+images should be retrieved from.
 
 == MISC ==
 
