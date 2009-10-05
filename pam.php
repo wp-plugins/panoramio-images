@@ -104,7 +104,18 @@ function pam_show($start, $end, $ll, $size){
 					<p style="text-align:right;font-size: 85%;margin-right:1px;"><a href="#" id="pamore">See more photos</a></p>
 					<p id="panoramio" style="color:#A1A1A1;font-size:85%;margin-top:3px;">Photos provided by <a href="http://www.panoramio.com">Panoramio</a> are under the copyright of their owners.</p></center>
 			</div>';
-
+		echo "<!-- plugin made by rambash - http://www.letsgeek.com/plugins/panoramio-images/ -->";
+		$ll = explode(":",$ll);
+		?>
+		<script>
+		var maxx = "<?= $ll[2] ?>";
+		var maxy = "<?= $ll[3] ?>";
+		var minx = "<?= $ll[0] ?>";
+		var miny = "<?= $ll[1] ?>";
+		var start = "<?= $start ?>";
+		var end = "<?= $end ?>";
+		</script>
+		<?
 		}
 }
 
@@ -132,6 +143,16 @@ function pam_display($start, $end, $coordinate, $size, $radius = 0.5){
 				{
 				pam_showfromcenter($start, $end, $coordinate, $radius, $size);
 			}
+}
+
+function pam_widget($postmeta)
+{
+	if(is_single())
+	{
+		if($postmeta){
+			pam_display(0, 6, $postmeta, "square");
+		}
+	}
 }
 
 
