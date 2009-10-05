@@ -1,13 +1,13 @@
 <?php
 /*
 Plugin Name: Panoramio Images
-Plugin URI: http://wordpress.org/extend/plugins/panoramio-images/
+Plugin URI: http://www.letsgeek.com/plugins/panoramio-images/
 Description: Adds functions to retrieve values and images from panoramio.
 Version: 1.1
 Author: Rambash
-Author URI: http://wordpress.org/extend/plugins/panoramio-images/
+Author URI: http://www.letsgeek.com/plugins/panoramio-images/
 
-Copyright 2009  Rambash (email : rambash@gmail.com)
+Copyright 2009  Rambash (email : rambash@letsgeek.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
