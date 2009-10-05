@@ -3,7 +3,7 @@
 Plugin Name: Panoramio Images
 Plugin URI: http://www.letsgeek.com/plugins/panoramio-images/
 Description: Adds functions to retrieve values and images from panoramio.
-Version: 1.1
+Version: 1.2
 Author: Rambash
 Author URI: http://www.letsgeek.com/plugins/panoramio-images/
 
