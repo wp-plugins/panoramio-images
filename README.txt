@@ -3,7 +3,7 @@ Contributors: Rambash
 Donate link: -
 Tags: panoramio, api, images, widget, sidebar
 Requires at least: -
-Tested up to: -
+Tested up to: 3.0.1
 Stable tag: trunk
 
 A wordpress plugin for retrieving images and values through the Panoramio API.
@@ -13,7 +13,6 @@ A wordpress plugin for retrieving images and values through the Panoramio API.
 A wordpress widget that retrieve images from Panoramio API.
 
 HOW TO
-
 To display the widget, add a custom field to a post called "panoramio". The value of panoramio should be the coordinate to the area that you want to display pictures from.
 The value should be formatted like this: X:Y
 
@@ -29,9 +28,12 @@ CHANGELOG
 -Fixed some bugs
 
 == Installation ==
-1. Unzip panoramio-images.zip
-2. Place the panoramio-images folder into /wp-content/plugins/
+1. Unzip panoramio-images.zip 
+
+2. Place the panoramio-images folder into /wp-content/plugin/
+
 3. Activate the plugin in the admin panel
+
 4. Navigate to widget settings page, drag the widget into your sidebar and set your preferences
 
 == Screenshots ==
